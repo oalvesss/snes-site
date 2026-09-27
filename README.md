@@ -3,6 +3,7 @@
 Site simples sobre o Super Nintendo: o console, as fitas (cartuchos) e os jogos que mais venderam.
 
 Trabalho de CPW — Professor Leonardo Constantin · IFSUL.
+Usando somente CSS e HTML padrão.
 
 ## Como rodar
 
