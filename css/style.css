@@ -1,3 +1,5 @@
+/* Variáveis de cores e medidas
+   Valem para a página inteira: trocar a cor aqui muda o site todo */
 :root {
   --fundo: #11132d;
   --fundo-2: #181a3b;
@@ -11,14 +13,18 @@
   --largura: 1100px;
 }
 
+/* Padding entra dentro da largura (não soma por fora)
+ * = todos os elementos. Sem esta linha o layout estoura */
 * {
   box-sizing: border-box;
 }
 
+/* Rolagem suave ao clicar nos links #ancora */
 html {
   scroll-behavior: smooth;
 }
 
+/* Fundo escuro, fonte e cor do texto */
 body {
   margin: 0;
   background: var(--fundo);
@@ -27,21 +33,27 @@ body {
   line-height: 1.6;
 }
 
+/* Link sem sublinhado, herdando a cor do texto */
 a {
   color: inherit;
   text-decoration: none;
 }
 
+/* Imagem vira bloco e ocupa a largura toda */
 img {
   display: block;
   width: 100%;
 }
 
+/* Centraliza o conteúdo (máx. 1100px)
+   calc() faz a conta, min() pega o menor valor, margin: 0 auto centraliza */
 .container {
   width: min(calc(100% - 48px), var(--largura));
   margin: 0 auto;
 }
 
+/* Cabeçalho flutuando no topo, fundo translúcido
+   position: absolute = sai do fluxo; z-index: 2 = fica na frente; rgba = 80% de opacidade */
 .topo {
   position: absolute;
   z-index: 2;
@@ -50,6 +62,7 @@ img {
   background: rgba(17, 19, 45, 0.8);
 }
 
+/* Logo à esquerda, menu à direita */
 .topo-conteudo {
   display: flex;
   min-height: 65px;
@@ -58,12 +71,14 @@ img {
   gap: 24px;
 }
 
+/* Texto do logo */
 .marca {
   color: var(--texto);
   font-size: 0.88rem;
   font-weight: 800;
 }
 
+/* Janelinha do mini logo (corta o que passa) */
 .marca-controle {
   display: inline-block;
   width: 52px;
@@ -72,28 +87,34 @@ img {
   overflow: hidden;
 }
 
+/* Logo inteiro, sem distorcer */
 .marca-controle img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
+/* Menu em linha, com espaço entre os links */
 nav {
   display: flex;
   gap: 23px;
 }
 
+/* Links do menu */
 nav a {
   color: var(--suave);
   font-size: 0.74rem;
   font-weight: 700;
 }
 
+/* Fica ciano com o mouse / no link ativo */
 nav a:hover,
 nav .ativo {
   color: var(--ciano);
 }
 
+/* Primeira tela: texto de um lado, foto do outro
+   grid = grade; 1fr 0.85fr = 2 colunas (1fr é a fração do espaço que sobra) */
 .hero {
   display: grid;
   min-height: 650px;
@@ -103,10 +124,12 @@ nav .ativo {
   padding-top: 65px;
 }
 
+/* Espaço em cima e embaixo do texto do hero */
 .hero-conteudo {
   padding: 80px 0;
 }
 
+/* Rótulo pequeno em caixa alta (ex.: 16 BITS) */
 .rotulo {
   margin: 0 0 15px;
   color: var(--ciano);
@@ -116,6 +139,8 @@ nav .ativo {
   text-transform: uppercase;
 }
 
+/* Títulos grandes, tamanho que cresce com a tela
+   clamp(mínimo, ideal, máximo): 6vw = 6% da largura da janela */
 h1,
 h2,
 .titulo-secao {
@@ -127,10 +152,12 @@ h2,
   text-transform: uppercase;
 }
 
+/* Deixa só a palavra NINTENDO rosa */
 h1 span {
   color: var(--rosa);
 }
 
+/* Texto do hero, com a linha curta */
 .hero p:not(.rotulo) {
   max-width: 490px;
   margin: 23px 0 28px;
@@ -138,6 +165,8 @@ h1 span {
   font-size: 1.05rem;
 }
 
+/* Botão roxo com o texto centralizado na vertical
+   inline-flex = flui como texto (não ocupa a largura toda) e centraliza */
 .botao {
   display: inline-flex;
   min-height: 44px;
@@ -150,10 +179,13 @@ h1 span {
   transition: background 160ms ease;
 }
 
+/* Botão fica rosa com o mouse */
 .botao:hover {
   background: var(--rosa);
 }
 
+/* Cartão da foto: moldura, sombra chapada e torto
+   box-shadow sem desfoque = retângulo chapado; rotate(2deg) = gira 2 graus */
 .hero-card {
   position: relative;
   padding: 19px;
@@ -162,6 +194,9 @@ h1 span {
   transform: rotate(2deg);
 }
 
+/* Papel amarelo atrás do cartão (só com CSS)
+   ::before cria um elemento que NÃO existe no HTML (por isso content: "")
+   z-index: -1 = manda para trás do cartão */
 .hero-card::before {
   position: absolute;
   z-index: -1;
@@ -173,12 +208,14 @@ h1 span {
   content: "";
 }
 
+/* Foto em proporção 5:4, sem esticar */
 .hero-card img {
   aspect-ratio: 5 / 4;
   object-fit: contain;
   background: #f4f4f6;
 }
 
+/* Legenda embaixo da foto, dentro da moldura ciano */
 .hero-card span {
   display: block;
   padding-top: 10px;
@@ -187,70 +224,80 @@ h1 span {
   font-weight: 800;
 }
 
+/* Seção com respiro e fundo alternado */
 .secao {
   padding: 95px 0;
   background: var(--fundo-2);
 }
 
-.secao:first-of-type {
-  background: var(--fundo);
-}
-
+/* Fundo mais escuro (seção das fitas) */
 .escuro {
   background: var(--fundo);
 }
 
+/* Título de um lado, texto do outro */
 .grade-conteudo {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   gap: 65px;
 }
 
+/* Título amarelo da seção */
 .titulo-secao {
   color: var(--amarelo);
   font-size: clamp(2rem, 4vw, 3.7rem);
 }
 
+/* Parágrafos da seção */
 .grade-conteudo p:not(.rotulo) {
   margin: 0 0 24px;
   color: var(--suave);
   font-size: 1rem;
 }
 
+/* Três números lado a lado
+   repeat(3, 1fr) = 3 colunas iguais; fr = fração do espaço que sobra */
 .numeros {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   border-top: 1px solid var(--linha);
 }
 
+/* Cada número, com divisória em cima */
 .numeros div {
   padding: 15px 12px 0 0;
   border-right: 1px solid var(--linha);
 }
 
+/* Espaço à esquerda no 2º e no 3º */
 .numeros div:not(:first-child) {
   padding-left: 12px;
 }
 
+/* Tira a borda do último número */
 .numeros div:last-child {
   border-right: 0;
 }
 
+/* Número em cima, descrição embaixo */
 .numeros strong,
 .numeros span {
   display: block;
 }
 
+/* Valor em ciano */
 .numeros strong {
   color: var(--ciano);
   font-size: 0.9rem;
 }
 
+/* Descrição pequena e apagada */
 .numeros span {
   color: var(--suave);
   font-size: 0.72rem;
 }
 
+/* Foto grande de um lado, texto do outro */
 .fitas-grade {
   display: grid;
   align-items: center;
@@ -259,38 +306,46 @@ h1 span {
   margin-top: 40px;
 }
 
+/* Tira a margem do figure */
 .fitas-grade figure {
   margin: 0;
 }
 
+/* Foto principal 16:9, borda roxa */
 .fita-principal img {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   border: 1px solid var(--roxo);
 }
 
+/* Legenda pequena embaixo da imagem */
 figcaption {
   padding-top: 9px;
   color: var(--suave);
   font-size: 0.75rem;
 }
 
+/* Foto secundária mais fina (16:6) */
 .fita-detalhe img {
   aspect-ratio: 16 / 6;
   object-fit: cover;
   border: 1px solid var(--ciano);
 }
 
+/* Texto ao lado da foto */
 .fita-detalhe p {
   margin: 17px 0 0;
   color: var(--suave);
   font-size: 0.92rem;
 }
 
+/* Espaço antes da coleção */
 .colecao {
   margin-top: 52px;
 }
 
+/* Cards que se adaptam (5, 3 ou 1 colunas)
+   repeat(auto-fit, minmax(195px, 1fr)) = o navegador calcula quantas colunas cabem */
 .colecao-grade {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
@@ -298,24 +353,28 @@ figcaption {
   margin-top: 18px;
 }
 
+/* Card com borda e fundo sutil */
 .colecao-item {
   padding: 15px;
   border: 1px solid var(--linha);
   background: rgba(255, 255, 255, 0.025);
 }
 
+/* Imagem do card em altura fixa, sem distorcer */
 .colecao-item img {
   height: 175px;
   object-fit: contain;
   background: #f3f3f5;
 }
 
+/* Título do card em ciano */
 .colecao-item h3 {
   margin: 18px 0 9px;
   color: var(--ciano);
   font-size: 1.05rem;
 }
 
+/* Texto do card */
 .colecao-item p {
   margin: 0;
   color: var(--suave);
@@ -323,6 +382,7 @@ figcaption {
   line-height: 1.7;
 }
 
+/* Introdução dos jogos, linha curta */
 .jogo-intro {
   max-width: 620px;
   margin: 18px 0 0;
@@ -330,6 +390,7 @@ figcaption {
   font-size: 0.96rem;
 }
 
+/* Três jogos lado a lado */
 .jogos {
   display: grid;
   margin-top: 40px;
@@ -337,49 +398,58 @@ figcaption {
   gap: 15px;
 }
 
+/* Card de cada jogo */
 .jogo {
   padding: 16px;
   border: 1px solid var(--linha);
   background: rgba(255, 255, 255, 0.025);
 }
 
+/* Fita e tela do jogo lado a lado */
 .jogo-fotos {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8px;
 }
 
+/* Tira a margem do figure */
 .jogo figure {
   margin: 0;
 }
 
+/* Duas imagens do mesmo tamanho */
 .jogo-fotos img {
   height: 120px;
   object-fit: contain;
   background: #f3f3f5;
 }
 
+/* A tela do jogo preenche a caixa (corta) */
 .jogo-fotos figure:last-child img {
   object-fit: cover;
 }
 
+/* Legenda Fita / Jogo */
 .jogo figcaption {
   padding-top: 5px;
   font-size: 0.66rem;
 }
 
+/* Dados do jogo (ano, gênero, vendas) */
 .jogo .rotulo {
   margin-top: 20px;
   margin-bottom: 8px;
   font-size: 0.66rem;
 }
 
+/* Nome do jogo em rosa */
 .jogo h3 {
   margin: 0 0 12px;
   color: var(--rosa);
   font-size: 1.25rem;
 }
 
+/* Texto do jogo */
 .jogo p:not(.rotulo) {
   margin: 0 0 10px;
   color: var(--suave);
@@ -387,6 +457,7 @@ figcaption {
   line-height: 1.7;
 }
 
+/* Rodapé */
 .rodape {
   padding: 23px 0;
   border-top: 1px solid var(--linha);
@@ -395,21 +466,25 @@ figcaption {
   font-size: 0.76rem;
 }
 
+/* Bloco roxo centralizado (Jogar online) */
 .aparte {
   padding: 90px 0;
   background: var(--roxo);
   text-align: center;
 }
 
+/* Rótulo amarelo do bloco roxo */
 .aparte .rotulo {
   color: var(--amarelo);
 }
 
+/* Título branco do bloco */
 .aparte h2 {
   color: #fff;
   font-size: clamp(2rem, 5vw, 4rem);
 }
 
+/* Texto centralizado e limitado em largura */
 .aparte p:not(.rotulo) {
   max-width: 640px;
   margin: 22px auto 30px;
@@ -417,6 +492,8 @@ figcaption {
   font-size: 1.05rem;
 }
 
+/* Botão escuro, maior que o normal
+   É mais específico que .botao, então sobrescreve (cascata) */
 .aparte .botao {
   background: var(--fundo);
   min-height: 52px;
@@ -424,22 +501,28 @@ figcaption {
   font-size: 0.86rem;
 }
 
+/* Fica rosa com texto escuro */
 .aparte .botao:hover {
   background: var(--rosa);
   color: var(--fundo);
 }
 
+/* Frase de um lado, crédito do outro */
 .rodape .container {
   display: flex;
   justify-content: space-between;
   gap: 20px;
 }
 
+/* CELULAR (até 720px) - desmonta as grades
+   @media = regra condicional: só vale quando a tela tiver 720px ou menos */
 @media (max-width: 720px) {
+  /* Margem menor no celular */
   .container {
     width: min(calc(100% - 32px), var(--largura));
   }
 
+  /* Logo em cima, menu embaixo */
   .topo-conteudo {
     align-items: flex-start;
     flex-direction: column;
@@ -447,45 +530,54 @@ figcaption {
     padding: 15px 0;
   }
 
+  /* Menu quebra linha quando não cabe */
   nav {
     flex-wrap: wrap;
     gap: 11px 16px;
   }
 
+  /* Vira uma coluna só (texto em cima) */
   .hero {
     display: block;
     min-height: auto;
     padding-top: 85px;
   }
 
+  /* Menos espaço em cima e embaixo */
   .hero-conteudo {
     padding: 45px 0 60px;
   }
 
+  /* Cartão centralizado e com largura máxima */
   .hero-card {
     max-width: 430px;
     margin: 0 auto 55px;
   }
 
+  /* Menos respiro vertical */
   .secao,
   .aparte {
     padding: 68px 0;
   }
 
+  /* Grade vira coluna única */
   .grade-conteudo,
   .fitas-grade {
     display: block;
   }
 
+  /* Espaço entre os blocos empilhados */
   .grade-conteudo > div:last-child,
   .fita-detalhe {
     margin-top: 30px;
   }
 
+  /* Números empilhados */
   .numeros {
     grid-template-columns: 1fr;
   }
 
+  /* Sem borda lateral, com linha embaixo */
   .numeros div,
   .numeros div:not(:first-child) {
     padding: 12px 0;
@@ -493,11 +585,13 @@ figcaption {
     border-bottom: 1px solid var(--linha);
   }
 
+  /* Cards em coluna única */
   .jogos,
   .colecao-grade {
     grid-template-columns: 1fr;
   }
 
+  /* Frases do rodapé em linhas separadas */
   .rodape .container {
     flex-direction: column;
   }

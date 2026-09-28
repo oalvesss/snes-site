@@ -12,15 +12,19 @@
   </head>
 
   <body>
+    <!-- header = topo do site: logo + menu -->
     <header class="topo">
       <div class="container topo-conteudo">
         <a class="marca" href="#inicio">
+          <!-- Ícone só decorativo: por isso aria-hidden (o leitor de tela não lê) -->
           <span class="marca-controle" aria-hidden="true">
             <img src="imagens/snes-controller.png" alt="" />
           </span>
           SUPER NINTENDO
         </a>
+        <!-- nav = menu; aria-label dá o nome dele para o leitor de tela -->
         <nav aria-label="Navegação">
+          <!-- Cada href="#id" ROLA a página até a seção com aquele id -->
           <a class="ativo" href="#inicio">Início</a>
           <a href="#console">O console</a>
           <a href="#fitas">Fitas</a>
@@ -30,6 +34,7 @@
     </header>
 
     <main>
+      <!-- HERO: a primeira tela (título gigante de um lado, foto do outro) -->
       <section class="hero container" id="inicio">
         <div class="hero-conteudo">
           <p class="rotulo">16 bits · 1991</p>
@@ -39,9 +44,12 @@
         </div>
         <div class="hero-card">
           <img src="imagens/snes-console-usa.jpg" alt="Super Nintendo com controle" />
+          <!-- span do card: legenda embaixo da foto, dentro da moldura ciano -->
+          <span>Super Nintendo · 1991</span>
         </div>
       </section>
 
+      <!-- Seção 1: fala do console -->
       <section class="secao" id="console">
         <div class="container grade-conteudo">
           <div>
@@ -63,11 +71,13 @@
         </div>
       </section>
 
+      <!-- Seção 2: as fitas (cartuchos) -->
       <section class="secao escuro" id="fitas">
         <div class="container">
           <p class="rotulo">As fitas</p>
           <h2>Colecionar é parte da brincadeira.</h2>
           <div class="fitas-grade">
+            <!-- figure = imagem + legenda, ligadas entre si -->
             <figure class="fita-principal">
               <img src="imagens/snes-cartridges.jpg" alt="Cartuchos de Super Nintendo" />
               <figcaption>Os cartuchos que marcaram a época</figcaption>
@@ -82,6 +92,7 @@
             <p class="rotulo">Curiosidades de colecionador</p>
             <p class="jogo-intro">Peças fora do comum: nada de fitas comuns aqui, só o tipo de item que faz a caça ao tesouro valer a pena.</p>
             <div class="colecao-grade">
+              <!-- article = um bloco que se repete (um card de colecionador) -->
               <article class="colecao-item">
                 <img src="imagens/killer-instinct-cart.png" alt="Fita preta de Killer Instinct para Super Nintendo" />
                 <h3>Killer Instinct</h3>
@@ -107,6 +118,7 @@
         </div>
       </section>
 
+      <!-- Seção 3: os 3 jogos que mais venderam -->
       <section class="secao" id="jogos">
         <div class="container">
           <p class="rotulo">Jogos</p>
@@ -114,6 +126,7 @@
           <p class="jogo-intro">Estes são os campeões de vendas do Super Nintendo. Veja a fita, uma imagem do jogo e quantas cópias cada um vendeu no mundo.</p>
 
           <div class="jogos">
+            <!-- Cada jogo: uma fita + uma tela do jogo, lado a lado -->
             <article class="jogo">
               <div class="jogo-fotos">
                 <figure><img src="imagens/mario-cart.png" alt="Fita de Super Mario World" /><figcaption>Fita</figcaption></figure>
@@ -150,6 +163,7 @@
         </div>
       </section>
 
+      <!-- aside = conteúdo à parte do assunto principal -->
       <aside class="aparte">
         <div class="container">
           <p class="rotulo">Sem baixar nada</p>
@@ -160,6 +174,7 @@
       </aside>
     </main>
 
+    <!-- footer = rodapé -->
     <footer class="rodape">
       <div class="container">
         <span>Super Nintendo · 16 bits</span>
