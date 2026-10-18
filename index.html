@@ -12,19 +12,15 @@
   </head>
 
   <body>
-    <!-- header = topo do site: logo + menu -->
     <header class="topo">
       <div class="container topo-conteudo">
         <a class="marca" href="#inicio">
-          <!-- Ícone só decorativo: por isso aria-hidden (o leitor de tela não lê) -->
           <span class="marca-controle" aria-hidden="true">
             <img src="imagens/snes-controller.png" alt="" />
           </span>
           SUPER NINTENDO
         </a>
-        <!-- nav = menu; aria-label dá o nome dele para o leitor de tela -->
         <nav aria-label="Navegação">
-          <!-- Cada href="#id" ROLA a página até a seção com aquele id -->
           <a class="ativo" href="#inicio">Início</a>
           <a href="#console">O console</a>
           <a href="#fitas">Fitas</a>
@@ -34,50 +30,45 @@
     </header>
 
     <main>
-      <!-- HERO: a primeira tela (título gigante de um lado, foto do outro) -->
       <section class="hero container" id="inicio">
         <div class="hero-conteudo">
           <p class="rotulo">16 bits · 1991</p>
           <h1>SUPER<br /><span>NINTENDO</span></h1>
-          <p>O console que trouxe aventura, jogos de plataforma e uma geração de jogos para casa.</p>
+          <p class="texto-hero">O console que trouxe aventura, jogos de plataforma e uma geração de jogos para casa.</p>
           <a class="botao" href="#fitas">Explorar as fitas →</a>
         </div>
         <div class="hero-card">
           <img src="imagens/snes-console-usa.jpg" alt="Super Nintendo com controle" />
-          <!-- span do card: legenda embaixo da foto, dentro da moldura ciano -->
           <span>Super Nintendo · 1991</span>
         </div>
       </section>
 
-      <!-- Seção 1: fala do console -->
       <section class="secao" id="console">
         <div class="container grade-conteudo">
           <div>
             <p class="rotulo">O console</p>
             <h1 class="titulo-secao">Pequeno no tamanho.<br />Grande no impacto.</h1>
           </div>
-          <div>
-            <p>
+          <div class="grade-texto">
+            <p class="texto-secao">
               O Super Nintendo Entertainment System chegou em 1991 com um hardware
               16-bit, gráficos mais detalhados e uma biblioteca que definiu uma
               geração de jogos para console.
             </p>
             <div class="numeros">
-              <div><strong>16-bit</strong><span>Arquitetura</span></div>
-              <div><strong>1991</strong><span>Lançamento no Japão</span></div>
-              <div><strong>6</strong><span>Botões no controle</span></div>
+              <div class="numero numero-primeiro"><strong>16-bit</strong><span>Arquitetura</span></div>
+              <div class="numero"><strong>1991</strong><span>Lançamento no Japão</span></div>
+              <div class="numero"><strong>6</strong><span>Botões no controle</span></div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Seção 2: as fitas (cartuchos) -->
       <section class="secao escuro" id="fitas">
         <div class="container">
           <p class="rotulo">As fitas</p>
           <h2>Colecionar é parte da brincadeira.</h2>
           <div class="fitas-grade">
-            <!-- figure = imagem + legenda, ligadas entre si -->
             <figure class="fita-principal">
               <img src="imagens/snes-cartridges.jpg" alt="Cartuchos de Super Nintendo" />
               <figcaption>Os cartuchos que marcaram a época</figcaption>
@@ -92,7 +83,6 @@
             <p class="rotulo">Curiosidades de colecionador</p>
             <p class="jogo-intro">Peças fora do comum: nada de fitas comuns aqui, só o tipo de item que faz a caça ao tesouro valer a pena.</p>
             <div class="colecao-grade">
-              <!-- article = um bloco que se repete (um card de colecionador) -->
               <article class="colecao-item">
                 <img src="imagens/killer-instinct-cart.png" alt="Fita preta de Killer Instinct para Super Nintendo" />
                 <h3>Killer Instinct</h3>
@@ -118,7 +108,6 @@
         </div>
       </section>
 
-      <!-- Seção 3: os 3 jogos que mais venderam -->
       <section class="secao" id="jogos">
         <div class="container">
           <p class="rotulo">Jogos</p>
@@ -126,60 +115,50 @@
           <p class="jogo-intro">Estes são os campeões de vendas do Super Nintendo. Veja a fita, uma imagem do jogo e quantas cópias cada um vendeu no mundo.</p>
 
           <div class="jogos">
-            <!-- Cada jogo: uma fita + uma tela do jogo, lado a lado -->
             <article class="jogo">
               <div class="jogo-fotos">
                 <figure><img src="imagens/mario-cart.png" alt="Fita de Super Mario World" /><figcaption>Fita</figcaption></figure>
-                <figure><img src="imagens/mario-game.png" alt="Imagem do jogo Super Mario World" /><figcaption>Jogo</figcaption></figure>
+                <figure class="tela-jogo"><img src="imagens/mario-game.png" alt="Imagem do jogo Super Mario World" /><figcaption>Jogo</figcaption></figure>
               </div>
               <p class="rotulo">1990 · Plataforma · 20,61 milhões</p>
               <h3>Super Mario World</h3>
-              <p>1º lugar: o jogo que mais vendeu no Super Nintendo, com mais de 20 milhões de cópias — quase sempre dentro da caixa junto com o console.</p>
-              <p>Mario e Yoshi exploram um mapa gigante com fases secretas, saídas escondidas e animais para montar. É a referência de plataforma da Nintendo.</p>
+              <p class="texto-card">1º lugar: o jogo que mais vendeu no Super Nintendo, com mais de 20 milhões de cópias — quase sempre dentro da caixa junto com o console.</p>
+              <p class="texto-card">Mario e Yoshi exploram um mapa gigante com fases secretas, saídas escondidas e animais para montar. É a referência de plataforma da Nintendo.</p>
             </article>
 
             <article class="jogo">
               <div class="jogo-fotos">
                 <figure><img src="imagens/allstars-cart.png" alt="Fita de Super Mario All-Stars" /><figcaption>Fita</figcaption></figure>
-                <figure><img src="imagens/allstars-game.png" alt="Imagem do jogo Super Mario All-Stars" /><figcaption>Jogo</figcaption></figure>
+                <figure class="tela-jogo"><img src="imagens/allstars-game.png" alt="Imagem do jogo Super Mario All-Stars" /><figcaption>Jogo</figcaption></figure>
               </div>
               <p class="rotulo">1993 · Compilação · 10,55 milhões</p>
               <h3>Super Mario All-Stars</h3>
-              <p>2º lugar: mais de 10 milhões de cópias vendidas. É uma coletânea com quatro clássicos de 8 bits refeitos em 16 bits, tudo em uma fita só.</p>
-              <p>Super Mario Bros., The Lost Levels, Super Mario Bros. 2 e Super Mario Bros. 3, com gráficos, trilha e menu novos e senha para salvar o jogo.</p>
+              <p class="texto-card">2º lugar: mais de 10 milhões de cópias vendidas. É uma coletânea com quatro clássicos de 8 bits refeitos em 16 bits, tudo em uma fita só.</p>
+              <p class="texto-card">Super Mario Bros., The Lost Levels, Super Mario Bros. 2 e Super Mario Bros. 3, com gráficos, trilha e menu novos e senha para salvar o jogo.</p>
             </article>
 
             <article class="jogo">
               <div class="jogo-fotos">
                 <figure><img src="imagens/dkc-cart.jpg" alt="Fita de Donkey Kong Country" /><figcaption>Fita</figcaption></figure>
-                <figure><img src="imagens/dkc-game.png" alt="Imagem do jogo Donkey Kong Country" /><figcaption>Jogo</figcaption></figure>
+                <figure class="tela-jogo"><img src="imagens/dkc-game.png" alt="Imagem do jogo Donkey Kong Country" /><figcaption>Jogo</figcaption></figure>
               </div>
               <p class="rotulo">1994 · Plataforma · 9,30 milhões</p>
               <h3>Donkey Kong Country</h3>
-              <p>3º lugar: 9,3 milhões de cópias, sendo 6,1 milhões vendidas só nos últimos 45 dias de 1994 — recorde de vendas rápidas da época.</p>
-              <p>Donkey Kong e Diddy Kong atravessam cavernas e fases de gelo com gráficos pré-renderizados em Silicon Graphics, trilha sonora marcante e jogo em dupla.</p>
+              <p class="texto-card">3º lugar: 9,3 milhões de cópias, sendo 6,1 milhões vendidas só nos últimos 45 dias de 1994 — recorde de vendas rápidas da época.</p>
+              <p class="texto-card">Donkey Kong e Diddy Kong atravessam cavernas e fases de gelo com gráficos pré-renderizados em Silicon Graphics, trilha sonora marcante e jogo em dupla.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- aside = conteúdo à parte do assunto principal -->
       <aside class="aparte">
         <div class="container">
           <p class="rotulo">Sem baixar nada</p>
           <h2>Jogar online</h2>
-          <p>Quer jogar agora? Abra a página dos jogos e rode os clássicos do Super Nintendo direto no navegador, no computador ou no celular.</p>
+          <p class="texto-aparte">Quer jogar agora? Abra a página dos jogos e rode os clássicos do Super Nintendo direto no navegador, no computador ou no celular.</p>
           <a class="botao" href="https://www.retrogames.onl/p/play-snes-games-online.html" target="_blank" rel="noopener noreferrer">Jogar online →</a>
         </div>
       </aside>
     </main>
-
-    <!-- footer = rodapé -->
-    <footer class="rodape">
-      <div class="container">
-        <span>Super Nintendo · 16 bits</span>
-        <span>Trabalho de CPW · Professor Leonardo Constantin · IFSUL</span>
-      </div>
-    </footer>
   </body>
 </html>
